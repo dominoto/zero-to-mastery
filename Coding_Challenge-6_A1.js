@@ -21,7 +21,7 @@ const answer = function (numbers) {
     //Filling new array according to count
     for (let key in counts) {
         if (counts[key] === 1) {
-            newArray.push(key);
+            newArray.push(parseInt(key));
         } else {
             let tempArray = new Array(counts[key]);
             tempArray.fill(parseInt(key), 0, counts[key]);
@@ -31,5 +31,34 @@ const answer = function (numbers) {
     console.log("Filling new array according to count: ", newArray);
 }
 
-//Calling the function
+
+//BONUS
+let bonusArray = [1, "2", "3", 2];
+
+const bonusAnswer = function (numbers) {
+
+    //Sorting the numbers
+    numbers.sort((a, b) => a - b);
+
+    //Creating new empty arrays, one for numbers, one for strings, one for joining
+    let numArray = [];
+    let stringArray = [];
+    let joinedArray = [];
+
+    //Filling new arrays according to type
+    for (let i in numbers) {
+        if (typeof numbers[i] === 'string') {
+            stringArray.push(numbers[i]);
+        } else {
+            numArray.push(numbers[i]);
+        }
+    }
+
+    //Putting arrays into joined array
+    joinedArray.push(numArray, stringArray);
+    console.log("Putting arrays into joined array: ", joinedArray);
+}
+
+//Calling the functions
 answer(arrayFromAbove);
+bonusAnswer(bonusArray);
