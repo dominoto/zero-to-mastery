@@ -62,3 +62,5 @@ const bonusAnswer = function (numbers) {
 //Calling the functions
 answer(arrayFromAbove);
 bonusAnswer(bonusArray);
+
+//Random comment to test github
